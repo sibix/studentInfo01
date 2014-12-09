@@ -20,7 +20,7 @@ while ($row=mysqli_fetch_array($result))
 echo "<tr>";
 	echo "<td>".$row["name"]."</td>";
 	echo "<td>".$row["parentname"]."</td>";
-	echo "<td>".$row["email"]."&nbsp;&nbsp;<a href='#'>Edit</a>&nbsp;&nbsp;<a href='#''>Delete</a></td>";
+	echo "<td>".$row["email"]."&nbsp;&nbsp;</td><td><a href='update.php?id=".$row["id"]."'>Edit</a>&nbsp;&nbsp;<a href='delete.php?id=".$row["id"]."'>Delete</a></td>";
 	
 echo "</tr>";
 }
