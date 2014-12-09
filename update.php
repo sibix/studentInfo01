@@ -12,8 +12,9 @@ $servername = "localhost";
 			}
 			echo "Connected successfully<br>";
 
-$Newname ='jina';
-$sql= "SELECT * FROM `studentdata` where name like '$Newname'";
+$Newname =$_GET["id"];
+
+$sql= "SELECT * FROM `studentdata` where id like '$Newname'";
 $result = mysqli_query($conn,$sql);
 
 
@@ -39,34 +40,34 @@ echo "</table>";
 
 
 
-?>
-<form action="update.php" method="post">
 
-		New Student name<input type="text" name="name">
-		New Parent name <input type="text" name="parentName">
-		New Mobile number<input type="text" name="mobileNumber">
-		<input type="submit">
-	</form>	
+	echo"<form action='update.php' method='post'>
 
-	<?php
+		New Student name<input type='text' name='name'>
+		New Parent name <input type='text' name='parentName'>
+		New Mobile number<input type='text' name='mobileNumber'>
+		<input type='submit'>
+	</form>";	
+
+	
 		if(isset($_POST['name']))
 			{ 
 				$name2 = $_POST['name'];
-				$sql = "UPDATE studentdata SET name='$name2'WHERE name='jina'";
+				$sql1 = "UPDATE studentdata SET name='$name2'WHERE id='$Newname'";
 				echo "New name saved sccessfully<br>";
 			} 
 
 		if(isset($_POST['parentName']))
 			{ 
 				$parentname2 = $_POST['parentName'];
-				$sql = "UPDATE studentdata SET parentname='$parentname2'WHERE name='jina'";
+				$sql2 = "UPDATE studentdata SET parentname='$parentname2'WHERE id='$Newname'";
 				echo "New parent name saved sccessfully<br>";
 
 			}
 		if(isset($_POST['mobileNumber']))
 			{ 
 				$mobile2 = $_POST['mobileNumber'];
-				$sql = "UPDATE studentdata SET email='$mobile2'WHERE name='jina'"; 
+				$sql3 = "UPDATE studentdata SET email='$mobile2'WHERE id='$Newname'"; 
 				echo "New mobile no saved sccessfully<br>";
 			}
 			
