@@ -12,8 +12,9 @@
 			}
 		echo "Connected successfully<br>";
 
-	$Newname ='jina';
-	$sql = "DELETE FROM studentdata WHERE name='$Newname'";
+	$Newname =$_GET["id"];
+	
+	$sql = "DELETE FROM studentdata WHERE id='$Newname'";
 
 	if (mysqli_query($conn, $sql)) {
     echo "data deleted successfully";
