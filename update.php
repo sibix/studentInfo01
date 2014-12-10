@@ -14,6 +14,7 @@ $servername = "localhost";
 
 $Newname =$_GET["id"];
 
+
 $sql= "SELECT * FROM `studentdata` where id like '$Newname'";
 $result = mysqli_query($conn,$sql);
 
@@ -39,10 +40,10 @@ echo "</table>";
 
 
 
+									// Change value 7 in line 46
 
-
-	echo"<form action='update.php' method='post'>
-
+	echo"<form action='finalupdate.php' method='post'>
+						<input type='hidden' name='var' value='7'> 
 		New Student name<input type='text' name='name'>
 		New Parent name <input type='text' name='parentName'>
 		New Mobile number<input type='text' name='mobileNumber'>
@@ -50,7 +51,7 @@ echo "</table>";
 	</form>";	
 
 	
-		if(isset($_POST['name']))
+	/*	if(isset($_POST['name']))
 			{ 
 				$name2 = $_POST['name'];
 				$sql1 = "UPDATE studentdata SET name='$name2'WHERE id='$Newname'";
@@ -69,7 +70,7 @@ echo "</table>";
 				$mobile2 = $_POST['mobileNumber'];
 				$sql3 = "UPDATE studentdata SET email='$mobile2'WHERE id='$Newname'"; 
 				echo "New mobile no saved sccessfully<br>";
-			}
+			}*/
 			
 
 
