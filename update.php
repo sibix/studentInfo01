@@ -43,7 +43,7 @@ echo "</table>";
 									// Change value 7 in line 46
 
 	echo"<form action='finalupdate.php' method='post'>
-						<input type='hidden' name='var' value='7'> 
+						<input type='hidden' name='var' value='$Newname'> 
 		New Student name<input type='text' name='name'>
 		New Parent name <input type='text' name='parentName'>
 		New Mobile number<input type='text' name='mobileNumber'>
